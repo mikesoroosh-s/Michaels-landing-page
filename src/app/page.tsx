@@ -201,6 +201,7 @@ function ManagementSection() {
       role: "Director",
       social: "@dotcomnirvan",
       href: "https://instagram.com/dotcomnirvan",
+      image: "/images/dotcomnirvan.jpg",
       artists: ["Yeat", "Trippie Redd", "Glokk40Spaz", "ApolloRed"],
     },
     {
@@ -208,6 +209,7 @@ function ManagementSection() {
       role: "Director / Creative",
       social: "@thecamgrey",
       href: "https://instagram.com/thecamgrey",
+      image: "/images/camgrey.jpg",
       artists: ["Rod Wave", "Rich the Kid", "Trippie Redd", "DDG"],
     },
   ];
@@ -279,6 +281,11 @@ function ManagementSection() {
               style={{ transitionDelay: `${(i + 1) * 200}ms` }}
             >
               <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-violet-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <img
+                src={talent.image}
+                alt={talent.name}
+                className="w-28 h-28 rounded-lg object-cover mb-5"
+              />
               <h3 className="text-3xl sm:text-4xl font-bold tracking-tight group-hover:text-violet-400 transition-colors mb-3">
                 {talent.name}
               </h3>
