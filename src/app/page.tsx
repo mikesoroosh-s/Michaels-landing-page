@@ -201,12 +201,14 @@ function ManagementSection() {
       role: "Director",
       social: "@dotcomnirvan",
       href: "https://instagram.com/dotcomnirvan",
+      artists: ["Yeat", "Trippie Redd", "Glokk40Spaz", "ApolloRed"],
     },
     {
       name: "CAM GREY",
       role: "Director / Creative",
       social: "@thecamgrey",
       href: "https://instagram.com/thecamgrey",
+      artists: ["Rod Wave", "Rich the Kid", "Trippie Redd", "DDG"],
     },
   ];
 
@@ -294,6 +296,21 @@ function ManagementSection() {
                 </svg>
                 {talent.social}
               </a>
+              <div className="mt-6 pt-6 border-t border-white/[0.06]">
+                <p className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-3">
+                  Artists
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {talent.artists.map((artist) => (
+                    <span
+                      key={artist}
+                      className="px-3 py-1 text-sm rounded-full bg-white/[0.04] border border-white/[0.08] text-zinc-300"
+                    >
+                      {artist}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           ))}
         </div>
