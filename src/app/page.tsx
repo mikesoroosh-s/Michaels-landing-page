@@ -343,31 +343,37 @@ function WorkSection() {
       id: "yvtvUYXDNkQ",
       title: "Turban",
       artist: "Yeat",
+      director: "DotComNirvan",
     },
     {
       id: "VxzO-AeFLo4",
       title: "Vice City Blues",
       artist: "1900Rugrat",
+      director: "DotComNirvan",
     },
     {
       id: "PmUnzgNETNo",
       title: "Fire In My Heart",
       artist: "Trippie Redd",
+      director: "DotComNirvan",
     },
     {
       id: "OvRCI12fdXc",
       title: "Backdoor",
       artist: "Glokk40Spaz",
+      director: "DotComNirvan",
     },
     {
       id: "JiNE7r9GVTs",
       title: "Ya Ya",
       artist: "Yeat",
+      director: "DotComNirvan",
     },
     {
-      id: "Soyq9RHNpR0",
-      title: "Bring Em Thru'",
-      artist: "BabyTron",
+      id: "uxzPGl_ci9U",
+      title: "No Counterfeit",
+      artist: "Rich The Kid",
+      director: "TheCamGrey",
     },
   ];
 
@@ -386,8 +392,9 @@ function WorkSection() {
             Videos I&apos;ve worked on
           </h2>
           <p className="text-lg text-zinc-400 mb-12">
-            Music videos produced with{" "}
-            <span className="text-white font-medium">DotComNirvan</span>
+            Music videos directed by{" "}
+            <span className="text-white font-medium">DotComNirvan</span> and{" "}
+            <span className="text-white font-medium">TheCamGrey</span>
           </p>
         </div>
 
@@ -417,7 +424,7 @@ function WorkSection() {
                 </h3>
                 <p className="text-sm text-zinc-400 mt-1">{video.artist}</p>
                 <p className="text-xs font-mono text-zinc-600 mt-2">
-                  Dir. by @DotComNirvan
+                  Dir. by @{video.director}
                 </p>
               </div>
             </div>
