@@ -48,7 +48,7 @@ function Navbar() {
           MS
         </a>
         <div className="flex items-center gap-8">
-          {["About", "Work", "Experience", "Contact"].map((item) => (
+          {["About", "Management", "Work", "Experience", "Contact"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -186,6 +186,149 @@ function AboutSection() {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ManagementSection() {
+  const { ref, isVisible } = useInView();
+
+  const roster = [
+    {
+      name: "DOTCOMNIRVAN",
+      role: "Director",
+      social: "@dotcomnirvan",
+      href: "https://instagram.com/dotcomnirvan",
+    },
+    {
+      name: "CAM GREY",
+      role: "Director / Creative",
+      social: "@thecamgrey",
+      href: "https://instagram.com/thecamgrey",
+    },
+  ];
+
+  const operations = [
+    {
+      title: "Negotiations",
+      description:
+        "Lead deal flow for all partnerships, label contracts, and talent agreements.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/>
+        </svg>
+      ),
+    },
+    {
+      title: "Production",
+      description:
+        "End-to-end on-set producing and logistical management.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.934a.5.5 0 0 0-.777-.416L16 11"/>
+          <rect x="2" y="6" width="14" height="12" rx="2"/>
+        </svg>
+      ),
+    },
+    {
+      title: "Budgeting",
+      description:
+        "Strategic allocation of shoot budgets and vendor-side negotiations.",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="12" x2="12" y1="2" y2="22"/>
+          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        </svg>
+      ),
+    },
+  ];
+
+  return (
+    <section id="management" className="relative py-32 px-6" ref={ref}>
+      <div className="max-w-6xl mx-auto">
+        <div
+          className={`transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <p className="text-sm font-mono text-violet-400 tracking-widest uppercase mb-4">
+            Management
+          </p>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+            The Roster
+          </h2>
+          <p className="text-lg text-zinc-400 mb-12">
+            Talent I manage and represent.
+          </p>
+        </div>
+
+        {/* Talent Cards */}
+        <div className="grid md:grid-cols-2 gap-6 mb-20">
+          {roster.map((talent, i) => (
+            <div
+              key={talent.name}
+              className={`group relative p-10 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-violet-500/30 hover:bg-white/[0.04] transition-all duration-500 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: `${(i + 1) * 200}ms` }}
+            >
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-violet-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <h3 className="text-3xl sm:text-4xl font-bold tracking-tight group-hover:text-violet-400 transition-colors mb-3">
+                {talent.name}
+              </h3>
+              <p className="text-lg text-zinc-400 mb-4">{talent.role}</p>
+              <a
+                href={talent.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-mono text-violet-400 hover:text-violet-300 transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+                {talent.social}
+              </a>
+            </div>
+          ))}
+        </div>
+
+        {/* Operations */}
+        <div
+          className={`transition-all duration-700 delay-300 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <h3 className="text-2xl font-bold tracking-tight mb-8 uppercase">
+            Operations
+          </h3>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {operations.map((op, i) => (
+            <div
+              key={op.title}
+              className={`group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-violet-500/20 hover:bg-white/[0.04] transition-all duration-500 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: `${(i + 2) * 200}ms` }}
+            >
+              <div className="text-violet-400 mb-4">{op.icon}</div>
+              <h4 className="text-lg font-semibold mb-3 group-hover:text-violet-400 transition-colors">
+                {op.title}
+              </h4>
+              <p className="text-zinc-400 leading-relaxed text-sm">
+                {op.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -444,6 +587,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <AboutSection />
+        <ManagementSection />
         <WorkSection />
         <ExperienceSection />
         <ContactSection />
