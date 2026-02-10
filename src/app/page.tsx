@@ -133,7 +133,23 @@ function AboutSection() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16">
+        <div className="grid md:grid-cols-[auto_1fr] gap-16 items-start">
+          <div
+            className={`transition-all duration-700 delay-100 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
+          >
+            <img
+              src="/images/michael.jpg"
+              alt="Michael Sorooshian"
+              className="w-48 h-48 rounded-lg object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-16 mt-12">
           <div
             className={`transition-all duration-700 delay-200 ${
               isVisible
