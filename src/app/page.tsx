@@ -211,6 +211,21 @@ function WorkSection() {
       title: "Fire In My Heart",
       artist: "Trippie Redd",
     },
+    {
+      id: "OvRCI12fdXc",
+      title: "Backdoor",
+      artist: "Glokk40Spaz",
+    },
+    {
+      id: "JiNE7r9GVTs",
+      title: "Ya Ya",
+      artist: "Yeat",
+    },
+    {
+      id: "Soyq9RHNpR0",
+      title: "Bring Em Thru'",
+      artist: "BabyTron",
+    },
   ];
 
   return (
