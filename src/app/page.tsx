@@ -342,7 +342,7 @@ function ManagementSection() {
                       <img
                         src={artist.image}
                         alt={artist.name}
-                        className="w-6 h-6 rounded-full object-cover"
+                        className="w-7 h-7 rounded-full object-cover"
                       />
                       <span className="text-sm text-zinc-300">{artist.name}</span>
                     </div>
