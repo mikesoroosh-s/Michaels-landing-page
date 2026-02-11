@@ -218,7 +218,12 @@ function ManagementSection() {
       social: "@dotcomnirvan",
       href: "https://instagram.com/dotcomnirvan",
       image: "/images/dotcomnirvan.jpg",
-      artists: ["Yeat", "Trippie Redd", "Glokk40Spaz", "ApolloRed"],
+      artists: [
+        { name: "Yeat", image: "/images/yeat.jpg" },
+        { name: "Trippie Redd", image: "/images/trippieredd.jpg" },
+        { name: "Glokk40Spaz", image: "/images/glokk40spaz.jpg" },
+        { name: "ApolloRed", image: "/images/apollored.jpg" },
+      ],
     },
     {
       name: "CAM GREY",
@@ -226,7 +231,12 @@ function ManagementSection() {
       social: "@thecamgrey",
       href: "https://instagram.com/thecamgrey",
       image: "/images/camgrey.jpg",
-      artists: ["Rod Wave", "Rich the Kid", "Trippie Redd", "DDG"],
+      artists: [
+        { name: "Rod Wave", image: "/images/rodwave.jpg" },
+        { name: "Rich the Kid", image: "/images/richthekid.jpg" },
+        { name: "Trippie Redd", image: "/images/trippieredd.jpg" },
+        { name: "DDG", image: "/images/ddg.jpg" },
+      ],
     },
   ];
 
@@ -323,14 +333,19 @@ function ManagementSection() {
                 <p className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-3">
                   Artists
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {talent.artists.map((artist) => (
-                    <span
-                      key={artist}
-                      className="px-3 py-1 text-sm rounded-full bg-white/[0.04] border border-white/[0.08] text-zinc-300"
+                    <div
+                      key={artist.name}
+                      className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08]"
                     >
-                      {artist}
-                    </span>
+                      <img
+                        src={artist.image}
+                        alt={artist.name}
+                        className="w-6 h-6 rounded-full object-cover"
+                      />
+                      <span className="text-sm text-zinc-300">{artist.name}</span>
+                    </div>
                   ))}
                 </div>
               </div>
